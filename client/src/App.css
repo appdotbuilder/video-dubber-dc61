@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Custom gradient backgrounds */
+  .gradient-bg {
+    @apply bg-gradient-to-br from-purple-50 to-blue-50;
+  }
+
+  /* Custom button gradients */
+  .btn-gradient {
+    @apply bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700;
+  }
+
+  /* Enhanced card hover effects */
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-lg hover:scale-[1.02];
+  }
+
+  /* Upload area animations */
+  .upload-drag-over {
+    @apply border-purple-400 bg-purple-50 scale-105;
+    animation: pulse 2s infinite;
+  }
+
+  /* Loading spinner */
+  .spinner {
+    animation: spin 1s linear infinite;
+  }
+
+  /* Status animations */
+  .status-processing {
+    animation: pulse 2s infinite;
+  }
+
+  /* Progress bar enhancements */
+  .progress-animated {
+    background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+    background-size: 200% 200%;
+    animation: gradient 2s ease infinite;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Custom scrollbar for better UX */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* File upload area enhancements */
+.upload-area {
+  transition: all 0.3s ease;
+}
+
+.upload-area:hover {
+  transform: translateY(-2px);
+}
+
+/* Enhanced focus states for accessibility */
+.focus-ring {
+  @apply focus:ring-2 focus:ring-purple-500 focus:ring-offset-2;
+}
